@@ -38,8 +38,6 @@ Thus, the result should be [1,0].
 
 
 # Constraints:
-1 <= digits.length <= 100
-<br>
-0 <= digits[i] <= 9
-<br>
-digits does not contain any leading 0's.
+- 1 <= digits.length <= 100
+- 0 <= digits[i] <= 9
+- digits does not contain any leading 0's.
