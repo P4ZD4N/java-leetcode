@@ -26,10 +26,18 @@ class SolutionTest {
                 () -> {
                     s.differenceOfSums(0, 5);
                 });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    s.differenceOfSums(1001, 5);
+                });
     }
 
     @Test
     void secondArgumentShouldThrowIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    s.differenceOfSums(10, 0);
+                });
         assertThrows(IllegalArgumentException.class,
                 () -> {
                     s.differenceOfSums(10, 1001);
