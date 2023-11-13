@@ -28,7 +28,7 @@ Return the integer num1 - num2.
 - Integers in the range [1, 5] that are divisible by 6 are [], num2 is the sum of those integers = 0.
 - We return 15 - 0 = 15 as the answer.
 
-# Example 3:
+# Example 3
 <b>Input:</b> n = 5, m = 1
 <br>
 <b>Output:</b> -15
@@ -39,5 +39,5 @@ Return the integer num1 - num2.
 - We return 0 - 15 = -15 as the answer.
 
 
-# Constraints:
+# Constraints
 - 1 <= n, m <= 1000
