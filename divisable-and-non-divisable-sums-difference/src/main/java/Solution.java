@@ -1,6 +1,6 @@
 public class Solution {
     public int differenceOfSums(int n, int m) {
-        if (n >= 1 && 1000 >= m) {
+        if ((1000 >= n && n >= 1) && (1000 >= m && m >= 1)) {
             int num1 = calculateSumOfNonDivisable(n, m);
             int num2 = calculateSumOfDivisable(n, m);
             return num1 - num2;
