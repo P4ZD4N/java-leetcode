@@ -6,7 +6,7 @@ You are also given an integer k. Sort the students (i.e., the rows of the matrix
 Return the matrix after sorting it.
 
 # Example 1
-![Example1](E:\java-leetcode\sort-the-students-by-their-kth-score\example1.PNG)
+![Example1](E:\java-leetcode\sort-the-students-by-their-kth-score\example1.PNG?raw=true)
 <br>
 <b>Input:</b> score = [[10,6,9,1],[7,5,11,2],[4,8,3,15]], k = 2
 <br>
@@ -18,7 +18,7 @@ Return the matrix after sorting it.
 - The student with index 2 scored 3 in exam 2, which is the lowest score, so they got third place.
 
 # Example 2
-![Example1](E:\java-leetcode\sort-the-students-by-their-kth-score\example2.PNG)
+![Example1](E:\java-leetcode\sort-the-students-by-their-kth-score\example2.PNG?raw=true)
 <br>
 <b>Input:</b> score = [[3,4],[5,6]], k = 0
 <br>
