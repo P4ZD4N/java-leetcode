@@ -14,5 +14,5 @@ Given a binary array nums, return the maximum number of consecutive 1's in the a
 <b>Output:</b> 2
 
 # Constraints
-- 1 <= nums.length <= 105
+- 1 <= nums.length <= 10<sup>5</sup>
 - nums[i] is either 0 or 1.
