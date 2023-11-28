@@ -1,3 +1,3 @@
 # Welcome! 👋
 
-In this repo I will place programming tasks from LeetCode solved using Java ☕
+In this repo I will place solutions of programming tasks from LeetCode.
