@@ -5,7 +5,7 @@ You are given an integer array heights representing the current order that the s
 <br>
 Return the number of indices where heights[i] != expected[i].
 
-# Example 1:
+# Example 1
 <b>Input:</b> heights = [1,1,4,2,1,3]
 <br>
 <b>Output:</b> 3
