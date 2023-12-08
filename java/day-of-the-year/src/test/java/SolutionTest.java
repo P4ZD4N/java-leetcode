@@ -74,4 +74,48 @@ class SolutionTest {
     void thisDateShouldReturn366() {
         assertEquals(366, solution.dayOfYear("2016-12-31"));
     }
+
+    @Test
+    void thisDateShouldThrowIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("1899-12-31");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("2020-01-01");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("1900-13-01");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("2018-00-01");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("20180001");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("2018-o1-01");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("1967-02-30");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("1969-05-00");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("1999-01-40");
+                });
+        assertThrows(IllegalArgumentException.class,
+                () -> {
+                    solution.dayOfYear("2001-11-31");
+                });
+    }
 }
