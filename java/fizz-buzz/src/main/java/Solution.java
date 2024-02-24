@@ -2,22 +2,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-    public List<String> fizzBuzz(int n) {
-        if (n >= 1 && 10000 >= n) {
-            List<String> answer = new ArrayList<>();
+    public List<String> fizzBuzz(int number) {
+        if (isNotNumberCorrect(number))
+            throw new IllegalArgumentException("Illegal argument");
 
-            for (int i = 1; i <= n; i++) {
-                if (i % 3 == 0 && i % 5 == 0)
-                    answer.add("FizzBuzz");
-                else if (i % 3 == 0)
-                    answer.add("Fizz");
-                else if (i % 5 == 0)
-                    answer.add("Buzz");
-                else
-                    answer.add(Integer.toString(i));
-            }
+        List<String> answer = new ArrayList<>();
 
-            return answer;
-        } else throw new IllegalArgumentException("Illegal argument");
+        for (int i = 1; i <= number; i++) {
+            if (isDivisibleBy3(i) && isDivisibleBy5(i))
+                answer.add("FizzBuzz");
+            else if (isDivisibleBy3(i))
+                answer.add("Fizz");
+            else if (isDivisibleBy5(i))
+                answer.add("Buzz");
+            else
+                answer.add(Integer.toString(i));
+        }
+
+        return answer;
+    }
+
+    private boolean isNotNumberCorrect(int number) {
+        return !(number >= 1 && 10000 >= number);
+    }
+
+    private boolean isDivisibleBy3(int number) {
+        return number % 3 == 0;
+    }
+
+    private boolean isDivisibleBy5(int number) {
+        return number % 5 == 0;
     }
 }
