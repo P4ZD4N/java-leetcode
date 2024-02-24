@@ -1,8 +1,19 @@
 public class Solution {
-    public int smallestEvenMultiple(int n) {
-        if (n >= 1 && 150 >= n) {
-            if (n % 2 == 0) return n;
-            else return n * 2;
-        } else throw new IllegalArgumentException("Number too big or too small!");
+    public int smallestEvenMultiple(int number) {
+        if (!(isNumberCorrect(number)))
+            throw new IllegalArgumentException("Number too big or too small!");
+
+        if (isNumberEven(number))
+            return number;
+        else
+            return number * 2;
+    }
+
+    private boolean isNumberCorrect(int number) {
+        return number >= 1 && 150 >= number;
+    }
+
+    private boolean isNumberEven(int number) {
+        return number % 2 == 0;
     }
 }
