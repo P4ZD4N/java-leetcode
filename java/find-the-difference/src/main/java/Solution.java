@@ -2,34 +2,58 @@ import java.util.Arrays;
 
 public class Solution {
     public char findTheDifference(String s, String t) {
-        if (
-                (1000 >= s.length()) &&
-                (s.length() >= 0) &&
-                (t.length() == s.length() + 1)
-        ) {
-            char[] firstStringToCharArray = s.toCharArray();
-            Arrays.sort(firstStringToCharArray);
-            char[] secondStringStringToCharArray = t.toCharArray();
-            Arrays.sort(secondStringStringToCharArray);
-
-            boolean notFoundDifference = true;
-            int index = 0;
-
-            for (int i = 0; i < firstStringToCharArray.length && notFoundDifference; i++) {
-                if (secondStringStringToCharArray[i] != firstStringToCharArray[i]) {
-                    index = i;
-                    notFoundDifference = false;
-                } else if (
-                        i == firstStringToCharArray.length - 1 && secondStringStringToCharArray[i] == firstStringToCharArray[i]
-                ) {
-                    index = i + 1;
-                    notFoundDifference = false;
-                }
-            }
-
-            return secondStringStringToCharArray[index];
-        } else {
+        if (!(hasFirstStringCorrectLength(s) && isSecondStringLengthGreaterBy1(s, t)))
             throw new IllegalArgumentException("Illegal argument");
+
+        char[] firstStringToSortedCharArray = getStringToSortedCharArray(s);
+        char[] secondStringToSortedCharArray = getStringToSortedCharArray(t);
+
+        return getWantedChar(firstStringToSortedCharArray, secondStringToSortedCharArray);
+    }
+
+    private boolean hasFirstStringCorrectLength(String firstString) {
+        return 1000 >= firstString.length();
+    }
+
+    private boolean isSecondStringLengthGreaterBy1(String firstString, String secondString) {
+        return secondString.length() == firstString.length() + 1;
+    }
+
+    private char[] getStringToSortedCharArray(String str) {
+        return getSortedArray(str.toCharArray());
+    }
+
+    private char[] getSortedArray(char[] array) {
+        Arrays.sort(array);
+        return array;
+    }
+
+    private char getWantedChar(char[] firstStringToSortedCharArray, char[] secondStringToSortedCharArray) {
+        boolean notFoundDifference = true;
+        int indexOfWantedChar = 0;
+
+        for (int i = 0; i < firstStringToSortedCharArray.length && notFoundDifference; i++) {
+            if (isCharAtThisPositionDifferentInBothArrays(
+                    firstStringToSortedCharArray[i], secondStringToSortedCharArray[i])) {
+                indexOfWantedChar = i;
+                notFoundDifference = false;
+            } else if (isLastIterationAndCharAtThisPositionSameInBothArrays(
+                    i, firstStringToSortedCharArray, secondStringToSortedCharArray)) {
+                indexOfWantedChar = i + 1;
+                notFoundDifference = false;
+            }
         }
+
+        return secondStringToSortedCharArray[indexOfWantedChar];
+    }
+
+    private boolean isCharAtThisPositionDifferentInBothArrays(char first, char second) {
+        return first != second;
+    }
+
+    private boolean isLastIterationAndCharAtThisPositionSameInBothArrays(
+            int iteration, char[] firstStringToSortedCharArray, char[] secondStringToSortedCharArray
+    ) {
+        return iteration == firstStringToSortedCharArray.length - 1 && secondStringToSortedCharArray[iteration] == firstStringToSortedCharArray[iteration];
     }
 }
